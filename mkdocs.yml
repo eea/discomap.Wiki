@@ -1,0 +1,38 @@
+site_name: Discomap wiki
+site_url: https://discomap.eea.europa.eu/wiki/
+theme:
+    name: readthedocs
+    custom_dir: theme/overrides
+nav:
+    - Welcome to Discomap:
+        - 'index.md'
+    - GIS Infrastructure:
+        - Overview: 'gis_infrastructure/overview.md'
+        - Workflows and guidelines: 'gis_infrastructure/guidelines.md'
+        - EEA ArcGIS Portal:
+            - Web map tutorial: 'gis_infrastructure/eea_arcgis_portal/webmaptutorial.md'
+        - Desktop apps:
+            - ArcGIS Pro:
+                - Overview: 'gis_infrastructure/desktop/arcgispro.md'
+                - Service publishing tutorial: 'gis_infrastructure/desktop/publishingtutorial.md'
+                - Image service publishing: 'gis_infrastructure/desktop/imageservicepublishing.md'
+                - Tile cache services: 'gis_infrastructure/desktop/tilecacheservices.md'
+        - 'App builders':
+            - 'ArcGIS Experience Builder':
+                - Custom widgets: 'gis_infrastructure/exb/customwidgets.md'
+                - Environments: 'gis_infrastructure/exb/environments.md'
+            - 'ArcGIS Dashboards': 'gis_infrastructure/dashboards/dashboards.md'
+    - Helpdesk: 
+        - 'helpdesk/helpdesk.md'
+        -  FAQ:
+            - 'helpdesk/faq/mapped_drives.md'
+            - 'helpdesk/faq/portallogin.md'
+    - Discohits:
+        - 'Discomap gallery': 'discohits.md'
+
+extra_css:
+  - style.css
+
+markdown_extensions:
+    - attr_list
+    - tables
