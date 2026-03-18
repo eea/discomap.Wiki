@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://discomap.eea.europa.eu/wiki/gis_infrastructure/guidelines/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Workflows and guidelines - Discomap wiki</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Workflows and guidelines";
+        var mkdocs_page_input_path = "gis_infrastructure/guidelines.md";
+        var mkdocs_page_url = "/wiki/gis_infrastructure/guidelines/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <!-- Matomo -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	  _paq.push(["setCookieDomain", "*.discomap.eea.europa.eu"]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="https://matomo.eea.europa.eu/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=7&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<!-- End Matomo Code -->
+	
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Discomap wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome to Discomap</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GIS Infrastructure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Workflows and guidelines</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#eea-publishing-guidelines">EEA Publishing Guidelines</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#eea-design-system">EEA Design System</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EEA ArcGIS Portal</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../eea_arcgis_portal/webmaptutorial/">Web map tutorial</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Desktop apps</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Pro</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../desktop/arcgispro/">Overview</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../desktop/publishingtutorial/">Service publishing tutorial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../desktop/imageservicepublishing/">Image service publishing</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../desktop/tilecacheservices/">Tile cache services</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >App builders</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Experience Builder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../exb/customwidgets/">Custom widgets</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../exb/environments/">Environments</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dashboards/dashboards/">ArcGIS Dashboards</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Helpdesk</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../helpdesk/helpdesk/">Helpdesk support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FAQ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../helpdesk/faq/mapped_drives/">Folder registering error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../helpdesk/faq/portallogin/">How to Login to Discomap Portal</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Discohits</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../discohits/">Discomap gallery</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Discomap wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GIS Infrastructure</li>
+      <li class="breadcrumb-item active">Workflows and guidelines</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="workflows-guidelines">Workflows &amp; guidelines</h1>
+<p>This section contains links to guidelines and templates related to handling spatial data in EEA.</p>
+<h2 id="eea-publishing-guidelines">EEA Publishing Guidelines</h2>
+<p>Map services play a pivotal role in supporting the mission and core values of the European Environment
+Agency (EEA). These services serve a wide range of purposes, from internal use to the dissemination of
+public information, covering EEA's key thematic areas. Given the dynamic nature of the information and
+the evolving requirements associated with these services, it is imperative that we establish and adhere to
+a standardized approach for requesting and maintaining them.
+In this document, we explore the essential guidelines and practices for service publication utilizing
+ArcGIS Pro in conjunction with ArcGIS Servers and Portal for ArcGIS.
+By following these recommendations, we can ensure the highest standards of data quality, streamline
+workflows, and maximize the benefits of our GIS initiatives. Let us embark on this journey of effective
+service publication and make a lasting impact in the world of geospatial information.</p>
+<p><strong>Projection</strong>:<br />
+  - The preferred projections for web mapping services are <strong>WGS 1984 Web Mercator (Auxiliary Sphere)</strong> or <strong>ETRS89 / LAEA Europe (EPSG:3035)</strong> for consistent geographic representation.<br />
+  - Avoid mixing different projections within the same map service or product.  </p>
+<p><strong>Layer Settings</strong>:<br />
+  - Symbology should be simple and consistent for clear map interpretation.<br />
+  - <strong>Scale-dependent rendering</strong> is essential to optimize map performance.<br />
+  - Ensure only necessary fields are visible; remove redundant ones.</p>
+<p><strong>Geometry and Data Integrity</strong>:<br />
+  - Regularly check and repair geometries to avoid errors.<br />
+  - Index key fields for performance and query optimization.<br />
+  - Use <strong>simple geometries</strong>; multipart features should be avoided unless necessary.</p>
+<p><strong>Metadata</strong>:<br />
+  - Complete metadata for all datasets and map services.<br />
+  - Include important metadata like purpose, extent, data sources, and update frequency.<br />
+  - Ensure metadata is compatible across all platforms (ArcGIS Server, Portal).</p>
+<p><strong>Naming Conventions</strong>:<br />
+  - Follow standardized naming conventions to ensure consistency across services.<br />
+  - Avoid special characters, spaces, or unnecessary abbreviations.</p>
+<p><strong>Data Consistency</strong>:<br />
+  - Maintain consistency in field names and data types.<br />
+  - Perform data validation and quality checks before publishing.</p>
+<p><strong>Publishing Workflow</strong>:<br />
+  - Test map services in a <strong>test environment</strong> before deploying to production.<br />
+  - Validate the functionality and performance of services to ensure they meet requirements.</p>
+<blockquote>
+<p>➡️ <strong>Full details</strong>: <strong><a href="https://discomap.eea.europa.eu/doc/EEA_PublishingGuidelines.pdf">Publishing guidelines</a></strong></p>
+</blockquote>
+<h2 id="eea-design-system">EEA Design System</h2>
+<p>EEA's catalogue of everything that makes up your digital product including user interface elements, writing style, guiding principles, coding standards, visual design, etc. using reusable components for easy development. EEA Design System (EEA-DS) standardizes the visual language and user experience of the EEA’s online applications. This also allows us to be more effecient when creating online applications instead of reinventing the wheel over and over. EEA-DS was built by a multi-disciplinary team of developers, designers, UX researchers, writers and data scientists. Combining the expertise of all of these roles allowed us to create a design system with a wide range of elements and for various target users (Web Designer, Web Writer/Content manager, Web Developer and Data scientist).</p>
+<blockquote>
+<p>➡️ <strong><a href="https://eea.github.io/volto-eea-design-system/">EEA Design System</a></strong></p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../overview/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../eea_arcgis_portal/webmaptutorial/" class="btn btn-neutral float-right" title="Web map tutorial">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../overview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../eea_arcgis_portal/webmaptutorial/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://discomap.eea.europa.eu/wiki/gis_infrastructure/exb/customwidgets/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Custom widgets - Discomap wiki</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Custom widgets";
+        var mkdocs_page_input_path = "gis_infrastructure/exb/customwidgets.md";
+        var mkdocs_page_url = "/wiki/gis_infrastructure/exb/customwidgets/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <!-- Matomo -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	  _paq.push(["setCookieDomain", "*.discomap.eea.europa.eu"]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="https://matomo.eea.europa.eu/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=7&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<!-- End Matomo Code -->
+	
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Discomap wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome to Discomap</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GIS Infrastructure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guidelines/">Workflows and guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EEA ArcGIS Portal</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../eea_arcgis_portal/webmaptutorial/">Web map tutorial</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Desktop apps</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Pro</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/arcgispro/">Overview</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/publishingtutorial/">Service publishing tutorial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/imageservicepublishing/">Image service publishing</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/tilecacheservices/">Tile cache services</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >App builders</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" >ArcGIS Experience Builder</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Custom widgets</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#add-group-content">Add Group Content</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-data-simplified">Add Data Simplified</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dynamic-filter-widget">Dynamic Filter Widget</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-gradient-legend-widget">EEA Gradient Legend Widget</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#layer-list">Layer List</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-legend">EEA Legend</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linked-button-widget">Linked Button Widget</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-matomo-detailed-tracking">EEA Matomo Detailed Tracking</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multilevel-layer-filter">Multilevel Layer Filter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-nested-section-menu">EEA Nested Section Menu</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#non-interactive-map-widget">Non-interactive Map Widget</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-login">EEA Login</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-dropdown">EEA Dropdown</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-feature-switch">EEA Feature Switch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-popup-filter">EEA Popup filter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-simple-navigation">EEA Simple Navigation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-timeline">EEA TimeLine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-url-filter">EEA URL Filter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-url-filter-layer">EEA URL Filter Layer</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eea-zoom-to-selection">EEA Zoom to selection</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../environments/">Environments</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboards/dashboards/">ArcGIS Dashboards</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Helpdesk</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../helpdesk/helpdesk/">Helpdesk support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FAQ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/mapped_drives/">Folder registering error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/portallogin/">How to Login to Discomap Portal</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Discohits</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../discohits/">Discomap gallery</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Discomap wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GIS Infrastructure</li>
+          <li class="breadcrumb-item">App builders</li>
+          <li class="breadcrumb-item">ArcGIS Experience Builder</li>
+      <li class="breadcrumb-item active">Custom widgets</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="custom-widgets">Custom widgets</h1>
+<h2 id="add-group-content">Add Group Content</h2>
+<p>The Add Group Content widget shows a list of layers that are shared with a specific group in ArcGIS Portal, allowing users to add them to the map.</p>
+<p><em>The version of this widget is: 1.17.0</em></p>
+<h3 id="usage-notes">Usage notes</h3>
+<p>This widget is essential for adding layers from a predefined group within ArcGIS Portal to your map. It is designed to be user-friendly and configurable through the Experience Builder interface or by importing/exporting a CSV file for advanced users.</p>
+<h4 id="features">Features:</h4>
+<ul>
+<li><strong>List of Layers</strong>: Displays layers shared with a specific group.</li>
+<li><strong>Add to Map</strong>: Allows users to add layers to the map.</li>
+<li><strong>Categorization</strong>: Supports categories displayed as an accordion menu for better organization.</li>
+<li><strong>Layer Details</strong>: Configure layer details such as category, temporal coverage, SDI link, download link, and service URL.</li>
+</ul>
+<h3 id="settings">Settings</h3>
+<p>The Add Group Content widget includes the following settings:</p>
+<ul>
+<li><strong>Map Selection</strong>: Choose the map to which the widget will be applied.</li>
+<li><strong>Use URL parameters</strong>: Enable the use of URL parameters for configuration.</li>
+<li><strong>Group ID</strong>: Enter the Group ID to pull the layers from the specific ArcGIS Portal group.</li>
+<li><strong>Import/Export</strong>: Advanced layer configuration by importing/exporting a CSV file.</li>
+<li><strong>Sort alphabetically</strong>: Option to sort the layers alphabetically.</li>
+</ul>
+<h2 id="add-data-simplified">Add Data Simplified</h2>
+<p>A simplified widget that allows users to add data to the map by searching for layers in ArcGIS content, entering URLs, or uploading local files.</p>
+<p><em>The version of this widget is: 1.17.0</em></p>
+<h3 id="usage-notes_1">Usage notes</h3>
+<p>This widget provides a streamlined interface for users to bring their own data into the application. It supports three methods of adding data, which can be toggled in the settings.</p>
+<h3 id="settings_1">Settings</h3>
+<ul>
+<li><strong>Map Widget</strong>: Select the map to which the data will be added.</li>
+<li><strong>Way of adding data</strong>: Enable or disable specific methods:<ul>
+<li><strong>Select from account</strong>: Allow searching and adding layers from ArcGIS Online/Portal.</li>
+<li><strong>Input URL</strong>: Allow adding data via service URLs.</li>
+<li><strong>Upload files</strong>: Allow uploading local files (e.g., CSV, KML, GeoJSON).</li>
+</ul>
+</li>
+<li><strong>Empty list message</strong>: Customize the placeholder text shown when no data has been added.</li>
+</ul>
+<h2 id="dynamic-filter-widget">Dynamic Filter Widget</h2>
+<p><strong>The version of this widget is: 1.14.0</strong></p>
+<p>The Dynamic Filter widget provides the ability to list the available values for predefined feature layer fields in order to filter an ArcGIS layer datasource.</p>
+<h3 id="usage-notes_2">Usage notes</h3>
+<p>Dynamic filters can be configured using a single feature layer data source. A filter can contain multiple fields, noting that the available values for each field are not affected by the selected values for other fields.<br />
+The field filters can be configured to allow single value or multiple value selection.</p>
+<blockquote>
+<p>ℹ️ <strong>Tip</strong><br />
+The widget can publish one message that can be used to configure actions in Experience Builder (ExB).</p>
+<ul>
+<li>Data source filter changes</li>
+</ul>
+</blockquote>
+<h3 id="layer-configuration">Layer Configuration</h3>
+<p>Each layer added through the widget can be configured with the following fields:</p>
+<ul>
+<li><strong>Category</strong>: Assign a category to the layer to organize it within the accordion menu.</li>
+<li><strong>Temporal Coverage</strong>: Specify the temporal range for the data, e.g., 1995-2012.</li>
+<li><strong>SDI URL</strong>: Provide a SDI link for the layer.</li>
+<li><strong>Hide SDI Link</strong>: Option to hide the SDI link if not needed.</li>
+<li><strong>Download URL</strong>: Provide a download link for the layer data.</li>
+<li><strong>Hide Download Link</strong>: Option to hide the download link if not needed.</li>
+<li><strong>Service URL</strong>: Paste the service URL if necessary.</li>
+</ul>
+<h3 id="important-notes">Important Notes</h3>
+<ul>
+<li><strong>Public Accessibility</strong>: If the application is intended to be public, ensure that all layers are shared with everyone and the group is configured to be visible by everyone.</li>
+</ul>
+<h2 id="eea-gradient-legend-widget">EEA Gradient Legend Widget</h2>
+<p>The Gradient Legend widget creates an ArcGIS-style legend component for a single layer. This widget can be used to display multiple stand-alone legend elements for specific layers.</p>
+<p><em>The version of this widget is: 1.15.0</em></p>
+<h3 id="usage-notes_3">Usage notes</h3>
+<p>The widget layer configuration requires selecting:</p>
+<ul>
+<li><strong>A map widget</strong>.</li>
+<li><strong>A map view</strong> that belongs to the selected map widget.</li>
+<li><strong>A layer view</strong>.</li>
+</ul>
+<p>The legend can be configured to display horizontally or vertically. For best results, ensure that both <strong>Bar width</strong> and <strong>Bar height</strong> are set accordingly.</p>
+<h4 id="features_1">Features</h4>
+<ul>
+<li><strong>Horizontal or Vertical Layout</strong>: Configure the legend direction.</li>
+<li><strong>Automatic Sizing</strong>: Recommended to set <strong>Bar width</strong> or <strong>Bar height</strong> to <code>auto</code> depending on the direction.</li>
+</ul>
+<h3 id="settings_2">Settings</h3>
+<p>The Gradient Legend widget includes the following settings:</p>
+<ul>
+<li><strong>Direction</strong>: Choose between horizontal or vertical display.</li>
+<li><strong>Bar Width/Height</strong>: Adjust the width and height for the legend bar to optimize display based on direction.</li>
+<li><strong>Rounding</strong>: Option to round the values in the legend.</li>
+<li><strong>Precision</strong>: Set the number of decimal places for the labels.</li>
+</ul>
+<h3 id="important-notes_1">Important Notes</h3>
+<ul>
+<li>The widget only supports <strong>color-based</strong> <code>classBreakInfos</code> and/or <code>visualVariables</code>.</li>
+<li><strong>Direction Setting</strong>: Setting the appropriate width or height to <code>auto</code> depending on the chosen direction is recommended.</li>
+<li><strong>Renderer Support</strong>: Only layers using the <strong>ClassBreaksRenderer</strong> are supported (https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-ClassBreaksRenderer.html).</li>
+<li><strong>Color-based Only</strong>: The widget does not support non-color-based class breaks or visual variables.</li>
+</ul>
+<h2 id="layer-list">Layer List</h2>
+<p>The Layer List widget provides a list of the layers added to a map. It allows users to manage the visibility and order of layers interactively.</p>
+<p><em>The version of this widget is: 1.17.0</em></p>
+<h3 id="usage-notes_4">Usage notes</h3>
+<p>The Layer List widget enhances user interaction with the map layers by providing several convenient features. Users can easily reorder layers, adjust transparency, toggle visibility, zoom to specific layers, and remove layers as needed.</p>
+<h4 id="features_2">Features:</h4>
+<ul>
+<li><strong>Change drawing order</strong>: Change the drawing order of the layers.</li>
+<li><strong>Transparency</strong>: Adjust the transparency of each layer using a slider or by typing a number (percentage).</li>
+<li><strong>Toggle Visibility</strong>: Switch on/off the visibility of each layer.</li>
+<li><strong>Zoom to Layer</strong>: Quickly zoom to the extent of a specific layer.</li>
+<li><strong>Remove Layer</strong>: Remove a layer from the map using the red trash can button.</li>
+</ul>
+<h3 id="settings_3">Settings</h3>
+<ul>
+<li><strong>Do not list sublayers</strong>: Checkbox option to hide sublayers from the list.</li>
+</ul>
+<blockquote>
+<p>ℹ️ <strong>Tip</strong> </p>
+<ul>
+<li><strong>Interactivity</strong>: Utilize the drag and drop feature to reorder layers easily, making the most important layers visible on top.</li>
+</ul>
+</blockquote>
+<h2 id="eea-legend">EEA Legend</h2>
+<p>Customizable Legend used to give experience owner some flexibility in customizing the legend because the out-of-the-box one is not customizable.</p>
+<p><em>The version of this widget is: 1.10.0</em></p>
+<h3 id="features_3">Features</h3>
+<ul>
+<li><strong>Inherits Advanced Options</strong> from the original widget (Font color and Background color)</li>
+<li><strong>Customizable from settings panel</strong> from Super Advanced Customization section as follows:</li>
+<li><strong>webMapentry</strong> contains customization options for WebMap as follows:<ul>
+<li><strong>show</strong>: used to show/hide title</li>
+<li><strong>color</strong>: used to select the appropriate title color</li>
+<li><strong>titleReplacement</strong>: used in case you'd like to change the title</li>
+<li>and more can be added like font size, etc.</li>
+</ul>
+</li>
+<li><strong>maps</strong>: entry contains the set of maps (map services) within the web map, each map has set of layers as follows:<ul>
+<li><strong>layers</strong>: entry contains the layers within each map service, customization options:</li>
+<li><strong>showInLegend</strong>: used to show/hide the entire layer in legend</li>
+<li><strong>layer &gt; show</strong>: used to show/hide layer title</li>
+<li><strong>layer &gt; titleReplacement</strong>: used in case you'd like to change the layer title</li>
+<li><strong>legend &gt; show</strong>: used to show/hide legend title, which is the alias of the field used in defining the color ranges</li>
+<li><strong>legend &gt; titleReplacement</strong>: used in case you'd like to change the legend title</li>
+<li><strong>legend &gt; reverse</strong>: used to reverse the color ranges of the legend</li>
+</ul>
+</li>
+</ul>
+<h2 id="linked-button-widget">Linked Button Widget</h2>
+<p><strong>The version of this widget is: 1.17.0</strong></p>
+<h3 id="settings_4">Settings</h3>
+<ul>
+<li><strong>Embedded (iframe) link target</strong>: Option to open the link in a new tab specifically when the app is embedded in an iframe.</li>
+</ul>
+<p>The Linked Button widget is based on the existing Experience Builder Button widget, adding the ability to enable/disable the button, link to multiple data sources, and other features.</p>
+<h3 id="usage-notes_5">Usage notes</h3>
+<p>The Linked Button widget can be linked with multiple data sources, and its state (enabled/disabled) can be set to match feature selection.<br />
+Matching the widget state with feature selection — i.e., enabling the widget only when at least one feature is selected — can be configured to work with any features, or features that satisfy a specific condition.<br />
+When the widget is configured to open a URL, the configured URL can be opened in the same tab or a new window. It can also be configured to open in a new window only if the app is running inside an iframe.</p>
+<h2 id="eea-matomo-detailed-tracking">EEA Matomo Detailed Tracking</h2>
+<p>Widget used to track statistics &amp; metrics into the EEA Matomo software.</p>
+<p><em>The version of this widget is: 1.17.0</em></p>
+<h3 id="settings_5">Settings</h3>
+<p>The parameter necessary for use this widget it's:</p>
+<ul>
+<li><strong>Matomo site Url</strong>: The URL of your Matomo instance (e.g., <code>https://matomo.eea.europa.eu/</code>).</li>
+<li><strong>Matomo site Id</strong>: The ID of the site in Matomo (e.g., <code>7</code>).</li>
+<li><strong>Page title</strong>: Optional custom title for the tracked page.</li>
+<li><strong>Include search parameters</strong>: Checkbox to include URL search parameters in tracking.</li>
+<li><strong>Include hash fragments</strong>: Checkbox to include URL hash fragments in tracking.</li>
+<li><strong>Measure time spent on page</strong>: Switch to enable tracking of time spent on the page.</li>
+</ul>
+<h3 id="usage-notes_6">Usage notes</h3>
+<p>The detailed widget allows to get statistics per page and also measuring the time spent on each page.</p>
+<h2 id="multilevel-layer-filter">Multilevel Layer Filter</h2>
+<p>The Multilevel Layer Filter widget provides the ability to list the available values for predefined feature layer fields in order to select a subset of features for further processing. This widget affects the record selection across the app, so that other widgets can use the selected data.</p>
+<p><em>The version of this widget is: 1.17.0</em></p>
+<h3 id="usage-notes_7">Usage notes</h3>
+<p>Multiple filters can be configured using different feature layer datasources. A new tab is introduced for each filter. The tab color and text can be configured.
+A filter can contain multiple fields, noting that the available values for each field will be affected by the selected values for all preceding fields. Changing the selected value for any field can be configured to trigger a record selection change or an extent change or both.</p>
+<h3 id="settings_6">Settings</h3>
+<ul>
+<li><strong>Layout</strong>: Choose between <strong>Horizontal</strong> or <strong>Vertical</strong> layout for the filter tabs.</li>
+<li><strong>Hide Title</strong>: Option to hide the widget title.</li>
+<li><strong>Deselect on inactive</strong>: Option to clear selection when the filter becomes inactive.</li>
+<li><strong>Field Settings</strong>:<ul>
+<li><strong>Zoom to features</strong>: Automatically zoom to features upon selection.</li>
+<li><strong>Hide feature count</strong>: Hide the total count of features.</li>
+<li><strong>Set selection</strong>: detailed selection options.</li>
+</ul>
+</li>
+</ul>
+<h4 id="warning">Warning:</h4>
+<ul>
+<li>In case of using multiple instances of this widget, note that the active tab and selected values will be synchronized across all instances, and that multiple instances are meant to be used in tandem.</li>
+<li>Only "Single selection" is currently supported for filter type. "Multiple selection" is unsupported.</li>
+</ul>
+<h2 id="eea-nested-section-menu">EEA Nested Section Menu</h2>
+<p>A responsive section menu widget that detects nested page structures, displays child pages in a horizontal or hamburger menu, and allows customization of spacing, font size, and color.</p>
+<p><em>The version of this widget is: 1.15.0. Working and tested on Experience Builder 1.15.</em></p>
+<h3 id="features_4">Features</h3>
+<p>This widget dynamically detects whether the current page is part of a nested page structure with a parent and child pages. When such a structure is identified, the widget renders a horizontal section menu displaying all child pages.</p>
+<ul>
+<li><strong>Automatic Detection:</strong> Recognizes if the page has a parent and child relationship.</li>
+<li><strong>Responsive Design:</strong><ul>
+<li>Displays a horizontal menu on screens wider than 980px.</li>
+<li>Switches to a hamburger menu on narrower screens for mobile-friendly navigation.</li>
+</ul>
+</li>
+<li><strong>Customizable Styles:</strong><ul>
+<li><strong>Link Spacing:</strong> Adjust the space between menu items.</li>
+<li><strong>Font Size:</strong> Define the size of the text for menu items.</li>
+<li><strong>Font Color:</strong> Set a custom color for the menu text.</li>
+</ul>
+</li>
+</ul>
+<p>This enables a clear, user-friendly navigation experience within hierarchically organized content, with full control over visual styling.</p>
+<h2 id="non-interactive-map-widget">Non-interactive Map Widget</h2>
+<p>The Non-interactive Map widget provides the ability to include a static map in the application that cannot be modified by the user. The map center and scale shall remain unchanged during usage, unless changed through other widgets (i.e., interaction with data lists). The user is not able to pan the map using the mouse or touch events, or zoom in/out using the scroll button or pinch gestures.</p>
+<p><em>The version of this widget is: 1.14.0</em></p>
+<h3 id="usage-notes_8">Usage notes</h3>
+<p>You can show a single map or include the option to switch between two maps. You can include multiple maps in an app by adding more Map widgets.
+The Map widget requires a data source, including web maps and web scenes. When you include tools, they are automatically positioned on the map based on the size of the widget in both design mode and the final app.</p>
+<p>This widget can be configured similar to the out-of-the-box Map widget. Please refer to the Map widget documentation for more information.</p>
+<blockquote>
+<p>ℹ️ <strong>Tip</strong>  </p>
+<ul>
+<li>
+<p>Zoom buttons can be enabled/disabled using widget configuration. Which can allow limited interactivity with the map.</p>
+</li>
+<li>
+<p>Feature pop-up can be enabled/disabled using widget configuration.</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="warning_1">Warning:</h4>
+<ul>
+<li>Scroll zooming is always disabled, even if enabled in widget configuration.</li>
+</ul>
+<h2 id="eea-login">EEA Login</h2>
+<p>This is a sign-in widget that supports both simple and advanced login options.</p>
+<p><em>The version of this widget is: 1.19.0</em></p>
+<h3 id="settings_7">Settings</h3>
+<ul>
+<li><strong>Login Type</strong>:<ul>
+<li><strong>Popup Window</strong>: Opens login in a popup.</li>
+<li><strong>Redirect</strong>: Redirects the current page for login.</li>
+</ul>
+</li>
+<li><strong>Post Sign-In Settings</strong>:<ul>
+<li><strong>Redirect after login</strong>: Configure a link to redirect after successful login.</li>
+<li><strong>Redirect after logout</strong>: Configure a link to redirect after logout.</li>
+</ul>
+</li>
+<li><strong>Login Options</strong>:<ul>
+<li><strong>Simple Login</strong>: Basic login button.</li>
+<li><strong>Advanced Login</strong>: Includes extended options like Username, User Avatar, User Profile, User Settings, and custom links (e.g., "Forgot Password").</li>
+</ul>
+</li>
+<li><strong>Appearance</strong>: Customize icons and styles (Regular/Hover active states).</li>
+</ul>
+<h2 id="eea-dropdown">EEA Dropdown</h2>
+<p>Generic EEA-style drop-down widget with configurable title and options.</p>
+<p><em>The version of this widget is: 1.15.0</em></p>
+<h3 id="settings_8">Settings</h3>
+<ul>
+<li><strong>General Options</strong>:<ul>
+<li><strong>Open by default</strong>: Checkbox.</li>
+<li><strong>Group ID</strong>: For grouping multiple dropdowns.</li>
+<li><strong>Title box color</strong>: Color picker for the dropdown header.</li>
+</ul>
+</li>
+<li><strong>Dropdown Title</strong>: Set the main title text.</li>
+<li><strong>Title Icon</strong>:<ul>
+<li><strong>Same icon for both states</strong>: Toggle.</li>
+<li><strong>Icon size/gap</strong>: Numeric inputs.</li>
+<li><strong>Select Icon</strong>: Choose images for collapsed/expanded states.</li>
+</ul>
+</li>
+<li><strong>Font Sizes</strong>:<ul>
+<li><strong>Title/Option size</strong>: Numeric inputs.</li>
+<li><strong>Size unit</strong>: px or rem.</li>
+<li><strong>Maintain proportions</strong>: Lock aspect ratio between title and options.</li>
+</ul>
+</li>
+<li><strong>Dropdown Content</strong>:<ul>
+<li><strong>Add option</strong>: Add new items to the list.</li>
+<li><strong>Option Name</strong>: Text label.</li>
+<li><strong>Link</strong>: Link selector for the option.</li>
+<li><strong>Open by default</strong>: Pre-select option.</li>
+</ul>
+</li>
+</ul>
+<h2 id="eea-feature-switch">EEA Feature Switch</h2>
+<p>A widget that allows navigating through features of a layer one by one, acting as a feature switcher or paginator. It works with a selected data source and can push the current feature to other widgets.</p>
+<p><em>The version of this widget is: 1.15.0</em></p>
+<h3 id="settings_9">Settings</h3>
+<ul>
+<li><strong>Data Source</strong>: Select the feature layer to navigate.</li>
+<li><strong>Layer Query</strong>:<ul>
+<li><strong>Distinct fields</strong>: Select fields to ensure distinct values (optional).</li>
+<li><strong>Feature selection</strong>: Checkbox "<strong>Select current feature</strong>". If enabled, the currently visible feature in the switcher will be automatically selected (highlighted) on the map.</li>
+</ul>
+</li>
+</ul>
+<h2 id="eea-popup-filter">EEA Popup filter</h2>
+<p>EEA Popup filter is an Experience Builder widget where Map popup appears on map click, popup will contain list of features comes from webmap data source. On click on any item in the list appeared in the popup, the dataframe got filtered as well.</p>
+<p><em>The version of this widget is: 1.11.0</em></p>
+<h3 id="usage-notes_9">Usage notes</h3>
+<p>Widget works exactly like ESRI's Table widget. It needs a datasource and it can filter the dataframe, it has visual list, it has UI controls to trigger clear filter.</p>
+<p>To use the widget, drag it and configure the settings as follows...</p>
+<ol>
+<li>Select map from map selector dropdown. Selected webmap's datasource will be the data sources.</li>
+<li>Select New sheet exactly like in Table widget.</li>
+<li>Configure message Action/Trigger.</li>
+</ol>
+<h3 id="how-does-it-work">How does it work</h3>
+<ol>
+<li>
+<p>Using the webmap that has been set in setting widget, enable click on map and select clicked feature.</p>
+</li>
+<li>
+<p>Get the map service behind the webmap.</p>
+</li>
+<li>Add invisible feature layer using the same URL of the map service.</li>
+<li>Add graphics layer to map.</li>
+<li>Define hittest function to allow users to select feature from the newly created feature layer.</li>
+<li>
+<p>Draw the selected feature on the graphics layer.</p>
+</li>
+<li>
+<p>On Map feature selection via map click, filter list with the table.</p>
+</li>
+<li>After clicking on map get the selected feature geometry, and filter the table with it.</li>
+<li>Once table records are filtered, the dataframe will also be filtered (given that Action/Trigger defined previously).</li>
+</ol>
+<h2 id="eea-simple-navigation">EEA Simple Navigation</h2>
+<p>A customizable link widget that supports styling for default, hover, and active states.</p>
+<p><em>The version of this widget is: 1.15.0. Working and tested on Experience Builder 1.15.</em></p>
+<h3 id="features_5">Features</h3>
+<p>The widget generates a hyperlink element with customizable visual states, including:</p>
+<ul>
+<li><strong>Default</strong></li>
+<li><strong>Hover</strong></li>
+<li><strong>Active</strong></li>
+</ul>
+<p>This customization capability allows developers to apply specific styles to the link, independent of the theme's default settings. Without this feature, styling would be constrained to the theme’s predefined text formats, limiting personalization and design flexibility.</p>
+<h2 id="eea-timeline">EEA TimeLine</h2>
+<p>The Timeline widget allows you to view temporal data from web maps, feature layers, and map service layers to see how data changes over time. Using this widget, you can animate data with play and pause buttons and manually view changes using a slider, and zoom in and out on a timeline.</p>
+<p><em>The version of this widget is: 1.10.0, Working on Experience Builder 1.14</em></p>
+<h3 id="usage-notes_10">Usage notes</h3>
+<p>This widget requires a data source that includes temporal and time-enabled data. The data source can be a web map, one or multiple map services, or one or multiple feature layers. The Timeline widget updates the data source universally, meaning it affects other widgets using the same data. For example, you can connect a Timeline, Map, List, and Table widget to the same feature layer and use the Timeline widget to filter the others. The data source may include a time offset. An offset allows you to display time-enabled data using time values that are offset from the time values recorded in the data. Applying a time offset does not affect the date and time information stored in the source data. For example, you can use an offset of one year to make data for a hurricane display as if it occurred at the same time as a different hurricane from the previous year. If a data source includes an offset, the Timeline widget honors the offset.</p>
+<h4 id="note">Note:</h4>
+<p>Notes necessary for understanding the widget.</p>
+<blockquote>
+<p>ℹ️ <strong>Tip</strong> </p>
+<p>To enable time settings on a layer, the layer must be published to ArcGIS Online with a date field.</p>
+<p>When you include this widget in an app, the widget provides users with the following options:</p>
+<ul>
+<li><strong>Overall time extent</strong>—Click the information button to display the entire extent of time represented by the timeline and view the following setting:</li>
+<li><strong>Timeline filtering applied</strong>—When this option is turned on, the Timeline widget filters the connected data source at the framework level, meaning it affects any other widgets using the same data source.</li>
+<li><strong>Zoom in and Zoom out</strong>—Zoom in or zoom out on the slider.</li>
+<li><strong>Previous and Next</strong>—Move the slider one step forward or backward.</li>
+<li><strong>Play and Pause</strong>—Play or pause the time animation.</li>
+<li><strong>Speed</strong>—Choose a play speed from five levels: Slowest, Slow, Medium, Fast, or Fastest.</li>
+</ul>
+</blockquote>
+<h3 id="settings_10">Settings</h3>
+<p>The Timeline widget includes the following settings:</p>
+<ul>
+<li><strong>Source</strong>—Select data source with temporal data to analyze with the widget.</li>
+<li>
+<p><strong>Time settings</strong>—Configure the timeline's settings. Time settings include start time, end time, length of time steps, and more.</p>
+</li>
+<li>
+<p><strong>Synchronize with the time settings in the web map</strong> (Only available for web maps)—Synchronize the widget's time settings with settings configured in Map Viewer.</p>
+</li>
+<li><strong>Configure time</strong>—Modify the timeline's start time, end time, length of time steps, and more.<ul>
+<li><strong>Time span</strong>—Set the length of time represented by the timeline. The layer bar or bars show the total amount of time represented in the connected layers. You can drag both ends of the Overall time extent bar to set the timeline's time span relative to the layer bar or bars.</li>
+<li><strong>Start time and End time</strong>—Set the lower and upper limits for the widget. You can define the start and end times in the following four ways:</li>
+<li><strong>Minimum of all and Maximum of all</strong>—Use the minimum and maximum points from the selected data for the start and end time.</li>
+<li><strong>Today</strong>—Anchor the start or end time to the current date. Optionally, add an offset number of years, months, or days. For example, if you choose Today for the start time and provide an offset of -6 days, the start time will always be 6 days before the current date. If you provide an offset of 6 days, the start time will always be 6 days after the current date.</li>
+<li><strong>Now</strong>—Anchor the start or end time to the current minute. This option is the same as Today, except the offset adds hours and minutes as available units.</li>
+<li><strong>Custom</strong>—Choose a specific date and time from a calendar interface.</li>
+<li><strong>Set the minimum time accuracy</strong>—Provide the minimum interval between notches on the timeline. Each unit is only provided in the drop-down menu when the Time span value is long enough to contain at least one of them.</li>
+</ul>
+</li>
+<li><strong>Date format</strong>—Type of date format in which it is displayed in the widget.<ul>
+<li><strong>Default</strong></li>
+<li><strong>Seasons</strong>—Format sss</li>
+<li><strong>July 2015</strong>—Format MMMM YYYY</li>
+<li><strong>Jul 2015</strong>—Format MMM YYYY</li>
+<li><strong>Jul 21, 2015</strong>—Format MMMM D, YYYY</li>
+<li><strong>Tue Jul 21, 2015</strong>—Format dddd MMM DD, YYYY</li>
+<li><strong>7/21/2015</strong>—Format M/DD/YYYY</li>
+<li><strong>2015/7/21</strong>—Format YYYY/M/DD</li>
+<li><strong>7/21/15</strong>—Format M/DD/YY</li>
+<li><strong>2015</strong>—Format YYYY</li>
+<li><strong>7/21/2015 8:00 am</strong>—Format M/DD/YYYY h:mm a</li>
+<li><strong>Tue Jul 21 8:00 am</strong>—Format ddd MMM DD h:mm a</li>
+<li><strong>Custom</strong>—Any date format that supports the library link: <a href="https://momentjs.com/">momentjs</a></li>
+</ul>
+</li>
+<li><strong>Shows one timestep</strong>—If enabled, only one date will be displayed.</li>
+<li><strong>Configure play rate</strong>—Controls the speed of play by default.</li>
+<li>
+<p><strong>Time step</strong>—Select one of two modes for dividing the timeline into steps:</p>
+<ul>
+<li><strong>Length of one step</strong>—Use natural time units, such as months or days, to define the steps. You can only choose units that are the same or greater than the unit you provide for the minimum time accuracy. If you choose this mode, the user can use the Previous and Next buttons to move the slider one step at a time based on the minimum time accuracy you provide.</li>
+<li><strong>Total time divided into equal steps</strong>—Divide the time extent into an equal number of steps. If you choose this mode and provide 5 as the number of equal steps, the user can move the slider 1/5 of the total length at a time using the Previous and Next buttons. For example, if you choose this mode and provide 5 as the number of equal steps, the user can move the slider one-fifth of the total length at a time.</li>
+</ul>
+<h4 id="note_1">Note:</h4>
+<p>Users can click and hold the time slider to drag it freely forward and backward.</p>
+</li>
+<li>
+<p><strong>Time display</strong>—Choose a method for visualizing data:</p>
+<ul>
+<li><strong>Show current window</strong>—Only show data associated with each step. For example, you can show a hurricane's position every day for one month.</li>
+<li><strong>Show data cumulatively</strong>—Add data to the display cumulatively. Data from previous steps stays when the widget moves to the next step. For example, you can show a hurricane's path over one month by adding its daily positions together chronologically.</li>
+</ul>
+</li>
+<li>
+<p><strong>Style</strong>—Choose a layout style for the widget, either Classic or Modern.</p>
+</li>
+<li><strong>Appearance</strong>—Customize the widget's foreground, background, and slider colors.</li>
+<li><strong>Display options</strong>—Choose to include play control and autoplay.</li>
+<li><strong>Enable play control</strong>—Include the Play, Pause, and Speed buttons.</li>
+<li><strong>Autoplay</strong>—Play the time animation automatically when the widget loads.</li>
+</ul>
+<h2 id="eea-url-filter">EEA URL Filter</h2>
+<p>The URL Filter widget provides the ability to interact with multiple datasources using URL parameters. The user can provide custom values to perform the following operations:</p>
+<ul>
+<li>Filter one or more datasources using a preconfigured field for each datasource</li>
+<li>Zoom to a subset of features</li>
+<li>Filter datasources and zoom to features</li>
+</ul>
+<p><em>The version of this widget is: 1.14.0</em></p>
+<h3 id="settings_11">Settings</h3>
+<ul>
+<li><strong>Use data source</strong>: Select the data source(s) to filter.</li>
+<li><strong>Filter configuration</strong> (per data source):<ul>
+<li><strong>Filter name</strong>: Define a friendly name for the filter.</li>
+<li><strong>Filter field</strong>: Select the specific field to apply the filter on.</li>
+</ul>
+</li>
+</ul>
+<h3 id="usage-notes_11">Usage notes</h3>
+<p>To configure the widget, the user can introduce multiple datasources, set a reference name for each datasource, and select the field to be used for filter. Once configured, the URL parameters can be set as follows <code>application_url/?url-filter=&lt;datasource_name&gt;;&lt;values_list&gt;;&lt;operation&gt;</code>. The <code>operation</code> parameter value can be:</p>
+<ul>
+<li>filter</li>
+<li>filterZoom</li>
+<li>zoom</li>
+</ul>
+<p>Multiple datasources configurations can be separated by double semicolon <code>;;</code>, as seen here.</p>
+<h4 id="warning_2">Warning:</h4>
+<p>It is recommended to apply the zoom operation to a single datasource to avoid publishing multiple extent changes messages, which may lead to unexpected behaviour.</p>
+<h2 id="eea-url-filter-layer">EEA URL Filter Layer</h2>
+<p>Widget that gives user full control on finding a certain feature by URL query parameters.</p>
+<p><em>The version of this widget is: 1.7.0</em></p>
+<h3 id="capabilities">Capabilities</h3>
+<ul>
+<li><strong>Find</strong> any layer from any map service within any webmap.</li>
+<li>Use standard <strong>Where clause</strong> to get the required feature. For example, <code>NUT0='DE'</code>, <code>NUTS_NAME='Germany'</code>, <code>OBJECTID=79</code>...etc. exactly as you type in REST API Query feature.</li>
+<li><strong>Highlight</strong>: Can highlight selected feature.</li>
+<li><strong>Zoom</strong>: Can zoom selected feature.</li>
+<li><strong>Filter</strong>: Can filter (map will be filtered and only selected feature will be on map).</li>
+<li><strong>Center</strong>: Can center the map on the selected feature.</li>
+<li>Any or all the above operators can be combined together to give the user the maximum flexibility.</li>
+</ul>
+<h3 id="url-format">URL Format</h3>
+<p><code>&lt;experience_url&gt;?find=FISE/FISEPercentages/MapServer/0:NUTS0='IS':highlight:filter:center:zoom</code></p>
+<p>Where:
+- <code>find</code> is the query parameter
+- <code>FISE/FISEPercentages/MapServer/0</code> is the service to search in format <code>folder/service_name/service_type/layer_id</code>
+- <code>NUTS0='IS'</code> is the standard REST API Where clause
+- <code>highlight</code> is an operator to get the selected feature highlighted
+- <code>filter</code> is an operator to get get the map filtered by the selected feature
+- <code>center</code> is an operator to center the map around the selected feature
+- <code>zoom</code> is an operator to zoom the map to the selected feature</p>
+<h2 id="eea-zoom-to-selection">EEA Zoom to selection</h2>
+<p><strong>The version of this widget is: 1.14.0</strong></p>
+<h3 id="overview">Overview</h3>
+<p>Widget used to find a layer, select a feature, center the map around it, zoom to it, and/or highlight it.</p>
+<h3 id="usage-notes_12">Usage notes</h3>
+<p>To use the widget, drag it into the app and configure the settings by selecting the map from the map selector dropdown.<br />
+The selected web map’s data source will be used as the widget’s data source.</p>
+<h3 id="how-does-it-work_1">How does it work</h3>
+<p>To make it work, simply add parameters to the URL.</p>
+<p>The widget supports the following capabilities:</p>
+<ul>
+<li><strong>Find</strong> any layer from any map service within any web map.</li>
+<li>Use standard <strong><code>where</code></strong> clause syntax to get the required feature.<br />
+<em>Examples:</em> <code>NUT0='DE'</code>, <code>NUTS_NAME='Germany'</code>, <code>OBJECTID=79</code> — same syntax as used in REST API feature queries.</li>
+<li><strong>Highlight</strong> the selected feature by including <code>highlight</code> as an operation.</li>
+<li><strong>Zoom</strong> to the selected feature with the <code>zoom</code> operation.</li>
+<li><strong>Filter</strong> the map so that only the selected feature is visible using the <code>filter</code> operation.</li>
+<li><strong>Center</strong> the map on the selected feature using the <code>center</code> operation.</li>
+<li>Any or all the above operations can be combined for maximum flexibility.</li>
+</ul>
+<h4 id="url-format_1">URL Format</h4>
+<h5 id="url-parameter-breakdown">URL Parameter Breakdown</h5>
+<ul>
+<li><code>find</code> — the main query parameter</li>
+<li><code>FISE/FISEPercentages/MapServer/0</code> — the service path, in the format:<br />
+<em>folder/service_name/service_type/layer_id</em></li>
+<li><code>NUTS0='IS'</code> — a standard REST API <code>where</code> clause to find the feature</li>
+<li><code>highlight</code> — highlights the selected feature</li>
+<li><code>filter</code> — filters the map to show only the selected feature</li>
+<li><code>center</code> — centers the map on the selected feature</li>
+<li><code>zoom</code> — zooms to the selected feature</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../desktop/tilecacheservices/" class="btn btn-neutral float-left" title="Tile cache services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../environments/" class="btn btn-neutral float-right" title="Environments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../desktop/tilecacheservices/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../environments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
