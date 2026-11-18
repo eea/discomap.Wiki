@@ -318,6 +318,32 @@ _The version of this widget is: 1.15.0_
     - **Link**: Link selector for the option.
     - **Open by default**: Pre-select option.
 
+## EEA Embed
+
+An extension of the Embed widget that embeds an external URL inside an iframe with extra sandbox permissions, allowing the embedded page to perform top navigation on the host page and, optionally, to download files.
+
+_The version of this widget is: 1.20.0_
+
+### Usage notes
+
+The widget is configured in the same way as the default Embed widget. Please refer to the Embed widget documentation for more information.
+
+#### Features:
+
+- **Top navigation**: The `allow-top-navigation` permission is always added to the iframe sandbox, so links in the embedded page can navigate the host page.
+- **Downloads**: The `allow-downloads` permission can be added to the iframe sandbox, so files can be downloaded from the embedded page.
+
+### Settings
+
+The settings of the default Embed widget (embed by URL or by code), plus:
+
+- **Sandbox**:
+    - **Allow downloads**: Switch to allow downloading files from the embedded page (disabled by default).
+
+#### Warning:
+
+- When the sandbox permissions are applied, the iframe is reloaded once so the new permissions take effect.
+
 ## EEA Feature Switch
 
 A widget that allows navigating through features of a layer one by one, acting as a feature switcher or paginator. It works with a selected data source and can push the current feature to other widgets.
