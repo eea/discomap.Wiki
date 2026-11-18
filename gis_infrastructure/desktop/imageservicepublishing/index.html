@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://discomap.eea.europa.eu/wiki/gis_infrastructure/desktop/imageservicepublishing/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Image service publishing - Discomap wiki</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Image service publishing";
+        var mkdocs_page_input_path = "gis_infrastructure/desktop/imageservicepublishing.md";
+        var mkdocs_page_url = "/wiki/gis_infrastructure/desktop/imageservicepublishing/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <!-- Matomo -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	  _paq.push(["setCookieDomain", "*.discomap.eea.europa.eu"]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="https://matomo.eea.europa.eu/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=7&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<!-- End Matomo Code -->
+	
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Discomap wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome to Discomap</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GIS Infrastructure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guidelines/">Workflows and guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EEA ArcGIS Portal</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../eea_arcgis_portal/webmaptutorial/">Web map tutorial</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Desktop apps</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" >ArcGIS Pro</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../arcgispro/">Overview</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../publishingtutorial/">Service publishing tutorial</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Image service publishing</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connect-arcgis-pro-to-the-server">Connect ArcGIS Pro to the Server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#initialize-the-sharing-process">Initialize the Sharing Process</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#set-item-properties">Set Item Properties</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-service-capabilities">Configure Service &amp; Capabilities</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#analyze-and-publish">Analyze and Publish</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#overwrite-an-existing-service">Overwrite an Existing Service</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#test-the-published-service">Test the Published Service</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conclusion-best-practices">Conclusion &amp; Best Practices</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../tilecacheservices/">Tile cache services</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >App builders</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Experience Builder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/customwidgets/">Custom widgets</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/environments/">Environments</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboards/dashboards/">ArcGIS Dashboards</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Helpdesk</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../helpdesk/helpdesk/">Helpdesk support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FAQ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/mapped_drives/">Folder registering error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/portallogin/">How to Login to Discomap Portal</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Discohits</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../discohits/">Discomap gallery</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Discomap wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GIS Infrastructure</li>
+          <li class="breadcrumb-item">Desktop apps</li>
+          <li class="breadcrumb-item">ArcGIS Pro</li>
+      <li class="breadcrumb-item active">Image service publishing</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="image-service-publishing-from-arcgis-pro-to-arcgis-server-standalone">Image Service Publishing from ArcGIS Pro to ArcGIS Server Standalone</h1>
+<p>This guide walks you through the steps to publish an image service from ArcGIS Pro to an ArcGIS Server standalone. Follow each step to successfully share your raster data as a web service.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="objective">Objective</h3>
+<p>Learn how to publish an image service from ArcGIS Pro to a standalone ArcGIS Server.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>ArcGIS Pro installed and licensed.</li>
+<li>Access to an ArcGIS Server standalone.</li>
+<li>Proper permissions to publish services on the server.</li>
+<li>A raster dataset (e.g., .tiff) ready to publish.</li>
+</ul>
+<hr />
+<h2 id="connect-arcgis-pro-to-the-server">Connect ArcGIS Pro to the Server</h2>
+<h3 id="create-connection">Create Connection</h3>
+<ol>
+<li>Open ArcGIS Pro.</li>
+<li>Go to the <code>Catalog</code> pane.</li>
+<li>
+<p>Right-click on <code>Servers</code> and select <code>Add ArcGIS Server</code>.
+<img alt="Connect to Server" src="../../../resources/img/imageservicepublishing/image1.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></p>
+</li>
+<li>
+<p>Provide the server's URL and your EIONET credentials. You can check the full list of available servers in the <strong>EEA Publishing Guidelines</strong> document.
+<img alt="Server Credentials" src="../../../resources/img/imageservicepublishing/image2.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="initialize-the-sharing-process">Initialize the Sharing Process</h2>
+<h3 id="select-server-connection">Select Server Connection</h3>
+<p>Publishing to a standalone server requires selecting the specific server connection first.</p>
+<ol>
+<li>Open your ArcGIS Pro project and go to the <code>Catalog</code> pane.</li>
+<li>Look for your ArcGIS Server connection and Right-click on it.</li>
+<li>Select <code>Publish</code> &gt; <code>Image Service</code> (or select your .tiff file/raster layer depending on context).
+   <em>(Note: Ensure you are right-clicking the server connection to publish options, or right-clicking the layer and selecting Share as Web Layer, selecting the server).</em>
+<img alt="Select Server" src="../../../resources/img/imageservicepublishing/image3.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ol>
+<hr />
+<h2 id="set-item-properties">Set Item Properties</h2>
+<h3 id="general-settings">General Settings</h3>
+<p>A new window will appear titled <strong>Publish Image Service</strong>.</p>
+<ul>
+<li><strong>Connection</strong>: Select your ArcGIS Server connection from the dropdown.</li>
+<li><strong>Image Service Name</strong>: Give your service a clear, concise name (avoid spaces or special characters).</li>
+<li><strong>Server Folder</strong>: Choose an existing folder on your server or create a new one to keep your services organized.</li>
+</ul>
+<hr />
+<h2 id="configure-service-capabilities">Configure Service &amp; Capabilities</h2>
+<h3 id="general-tab">General Tab</h3>
+<p><strong>Name &amp; Location</strong>: Enter a name for your service and select the folder on the server. Fill the Summary and Tags with the corresponding metadata.</p>
+<p><strong>Data Reference</strong>: 
+- In the <code>Content</code> section, check the <strong>Data Source</strong>.
+- If it says <strong>Registered</strong>, the source folder of the image must be registered with the server.
+- If it says <strong>Upload</strong>, the server will copy the entire raster to its own directories.</p>
+<blockquote>
+<p><strong>Note</strong>: Uploading can be very slow for large datasets, so make your choice wisely.
+<img alt="Data Configuration" src="../../../resources/img/imageservicepublishing/image4.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></p>
+</blockquote>
+<h3 id="configuration-tab">Configuration Tab</h3>
+<p>This is where you define how users can interact with your imagery. Click on the <code>Configuration</code> tab in the publishing window.</p>
+<ul>
+<li>Enable specific capabilities as needed (e.g., WMS, WCS).
+<img alt="Capabilities" src="../../../resources/img/imageservicepublishing/image5.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ul>
+<hr />
+<h2 id="analyze-and-publish">Analyze and Publish</h2>
+<h3 id="analyze">Analyze</h3>
+<ol>
+<li>Click the <code>Analyze</code> button at the bottom of the pane. This checks for common issues like missing metadata or unsupported coordinate systems.</li>
+<li><strong>Fix Errors</strong>: If you see a red "X," you must resolve it before publishing. Yellow "!" warnings are suggestions but won't stop the process.</li>
+</ol>
+<h3 id="publish">Publish</h3>
+<ol>
+<li>Click <code>Publish</code>.</li>
+<li>Once the process finishes, you will see a success message. Your image service is now live.</li>
+</ol>
+<hr />
+<h2 id="overwrite-an-existing-service">Overwrite an Existing Service</h2>
+<h3 id="locate-and-overwrite">Locate and Overwrite</h3>
+<p>If you need to republish or update an existing service:</p>
+<ol>
+<li>Locate the service in the <code>Servers</code> section of the <code>Catalog</code>.</li>
+<li>Right-click on the service and choose <code>Overwrite</code>.</li>
+<li>Follow the prompts to update the service with new data or settings.
+<img alt="Overwrite" src="../../../resources/img/imageservicepublishing/image6.png" style="height:150px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ol>
+<hr />
+<h2 id="test-the-published-service">Test the Published Service</h2>
+<h3 id="access-the-service">Access the Service</h3>
+<ol>
+<li>Open a web browser and go to the service's URL.</li>
+<li>Ensure the map or data layers are accessible and display correctly.</li>
+</ol>
+<h3 id="test-functionalities">Test Functionalities</h3>
+<p>If you enabled additional capabilities (e.g., <code>WMS</code>), test their functionalities.</p>
+<hr />
+<h2 id="conclusion-best-practices">Conclusion &amp; Best Practices</h2>
+<h3 id="maintenance">Maintenance</h3>
+<p>Regularly monitor and maintain your service to ensure data is up-to-date and performance is optimal.</p>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li><strong>Optimize data</strong> before publishing for efficient service performance.</li>
+<li><strong>Use logical server folders</strong> to organize and manage services effectively.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../publishingtutorial/" class="btn btn-neutral float-left" title="Service publishing tutorial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tilecacheservices/" class="btn btn-neutral float-right" title="Tile cache services">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../publishingtutorial/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tilecacheservices/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

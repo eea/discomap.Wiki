@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://discomap.eea.europa.eu/wiki/gis_infrastructure/dashboards/dashboards/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>ArcGIS Dashboards - Discomap wiki</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ArcGIS Dashboards";
+        var mkdocs_page_input_path = "gis_infrastructure/dashboards/dashboards.md";
+        var mkdocs_page_url = "/wiki/gis_infrastructure/dashboards/dashboards/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <!-- Matomo -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	  _paq.push(["setCookieDomain", "*.discomap.eea.europa.eu"]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="https://matomo.eea.europa.eu/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=7&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<!-- End Matomo Code -->
+	
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Discomap wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome to Discomap</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GIS Infrastructure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guidelines/">Workflows and guidelines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EEA ArcGIS Portal</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../eea_arcgis_portal/webmaptutorial/">Web map tutorial</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Desktop apps</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Pro</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/arcgispro/">Overview</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/publishingtutorial/">Service publishing tutorial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/imageservicepublishing/">Image service publishing</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/tilecacheservices/">Tile cache services</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >App builders</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Experience Builder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/customwidgets/">Custom widgets</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/environments/">Environments</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">ArcGIS Dashboards</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-functionality">Basic Functionality</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Helpdesk</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../helpdesk/helpdesk/">Helpdesk support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FAQ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/mapped_drives/">Folder registering error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/portallogin/">How to Login to Discomap Portal</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Discohits</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../discohits/">Discomap gallery</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Discomap wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GIS Infrastructure</li>
+          <li class="breadcrumb-item">App builders</li>
+      <li class="breadcrumb-item active">ArcGIS Dashboards</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arcgis-dashboards">ArcGIS Dashboards</h1>
+<p>ArcGIS Dashboards is a configurable web app in ArcGIS Portal that provides a comprehensive and engaging view of your data. Dashboards display multiple visualizations that work together on a single screen.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Interactive Elements</strong>: Include maps, charts, gauges, and other elements that update dynamically based on user interactions.</li>
+<li><strong>Configurable</strong>: Tailor dashboards to meet specific needs without any coding, using the interactive configuration settings.</li>
+<li><strong>Data Integration</strong>: Combine data from multiple sources, including ArcGIS layers, web services, and external APIs.</li>
+</ul>
+<h2 id="basic-functionality">Basic Functionality</h2>
+<ol>
+<li><strong>Data Source Connection</strong>: Connect to your data sources, which can include feature layers, map services, or other data available in your ArcGIS Portal.</li>
+<li><strong>Designing the Dashboard</strong>: Use the dashboard's configuration interface to drag and drop elements such as maps, charts, lists, indicators, and more.</li>
+<li><strong>Interactivity Setup</strong>: Configure interactions between elements so that selections in one element can filter or update other elements.</li>
+<li><strong>Sharing</strong>: Once your dashboard is configured, you can share it with specific users, groups, or the public.</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get started with ArcGIS Dashboards, you can follow the <a href="https://doc.arcgis.com/en/dashboards/">official documentation</a>.</p>
+<p>For a detailed guide on how to create and configure your dashboards, refer to the <a href="https://doc.arcgis.com/en/dashboards/create-and-share/">ArcGIS Dashboards Documentation</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../exb/environments/" class="btn btn-neutral float-left" title="Environments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../helpdesk/helpdesk/" class="btn btn-neutral float-right" title="Helpdesk support">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../exb/environments/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../helpdesk/helpdesk/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

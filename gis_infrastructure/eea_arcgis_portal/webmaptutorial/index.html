@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://discomap.eea.europa.eu/wiki/gis_infrastructure/eea_arcgis_portal/webmaptutorial/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Web map tutorial - Discomap wiki</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Web map tutorial";
+        var mkdocs_page_input_path = "gis_infrastructure/eea_arcgis_portal/webmaptutorial.md";
+        var mkdocs_page_url = "/wiki/gis_infrastructure/eea_arcgis_portal/webmaptutorial/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <!-- Matomo -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	  _paq.push(["setCookieDomain", "*.discomap.eea.europa.eu"]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="https://matomo.eea.europa.eu/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=7&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+	<!-- End Matomo Code -->
+	
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Discomap wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome to Discomap</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GIS Infrastructure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../guidelines/">Workflows and guidelines</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >EEA ArcGIS Portal</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Web map tutorial</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#objective">Objective</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-1-getting-started">Phase 1: Getting Started</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#log-in-and-open-map-viewer">Log In and Open Map Viewer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-2-adding-data-via-url">Phase 2: Adding Data via URL</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-add-a-service-url">How to Add a Service URL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#choosing-the-right-url-level">Choosing the Right URL Level</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-3-configuring-symbology-styles">Phase 3: Configuring Symbology (Styles)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-4-crafting-informative-pop-ups">Phase 4: Crafting Informative Pop-ups</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phase-5-saving-and-sharing">Phase 5: Saving and Sharing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#save">Save</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#share">Share</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conclusion-best-practices">Conclusion &amp; Best Practices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#key-tips-for-eea-users">Key Tips for EEA Users</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Desktop apps</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Pro</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/arcgispro/">Overview</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/publishingtutorial/">Service publishing tutorial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/imageservicepublishing/">Image service publishing</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../desktop/tilecacheservices/">Tile cache services</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >App builders</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >ArcGIS Experience Builder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/customwidgets/">Custom widgets</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../exb/environments/">Environments</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboards/dashboards/">ArcGIS Dashboards</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Helpdesk</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../helpdesk/helpdesk/">Helpdesk support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FAQ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/mapped_drives/">Folder registering error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../helpdesk/faq/portallogin/">How to Login to Discomap Portal</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Discohits</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../discohits/">Discomap gallery</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Discomap wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GIS Infrastructure</li>
+          <li class="breadcrumb-item">EEA ArcGIS Portal</li>
+      <li class="breadcrumb-item active">Web map tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="creating-a-web-map-on-the-eea-arcgis-portal">Creating a Web Map on the EEA ArcGIS Portal</h1>
+<p>Creating a web map on the EEA ArcGIS Portal is one of the most effective ways to visualize environmental data and share insights across the agency. This guide will walk you through the process from start to finish.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="objective">Objective</h3>
+<p>Learn how to create, configure, and share a web map on the EEA ArcGIS Portal.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Access to the EEA ArcGIS Portal.</li>
+<li>Data services URLs (REST/WMS/WFS) ready to be added.</li>
+</ul>
+<hr />
+<h2 id="phase-1-getting-started">Phase 1: Getting Started</h2>
+<h3 id="log-in-and-open-map-viewer">Log In and Open Map Viewer</h3>
+<ol>
+<li><strong>Log In</strong>: Navigate to the EEA ArcGIS Portal and sign in with your EEA credentials.<blockquote>
+<p>If you have trouble logging in, check the <a href="../../../helpdesk/faq/portallogin/">Portal Login guide</a>.</p>
+</blockquote>
+</li>
+<li><strong>Open Map Viewer</strong>: In the top navigation bar, click on <code>Map</code>. This opens the "Map Viewer" (the interface for map creation).</li>
+</ol>
+<hr />
+<h2 id="phase-2-adding-data-via-url">Phase 2: Adding Data via URL</h2>
+<p>You can pull data directly from a server (like an ArcGIS Server or an OGC WMS/WFS service). This is the best practice for using "live" data.</p>
+<h3 id="how-to-add-a-service-url">How to Add a Service URL</h3>
+<ol>
+<li>On the left-hand toolbar, click the <code>Add</code> button (+).</li>
+<li>Select <code>Web Services</code> (or <code>Add Layer from URL</code>).</li>
+<li><strong>Paste your URL</strong>: This will usually look like a link ending in <code>/MapServer</code>, <code>/FeatureServer</code>, or <code>/ImageServer</code>.<blockquote>
+<p><strong>Note</strong>: Choose REST for better compatibility and customizing options.</p>
+</blockquote>
+</li>
+<li>Click <code>Add to Map</code>.
+<img alt="Add Data" src="../../../resources/img/webmaptutorial/image1.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ol>
+<h3 id="choosing-the-right-url-level">Choosing the Right URL Level</h3>
+<p>When you append a layer ID (like <code>/0</code>) to the end of your URL, you change how the Portal interacts with the data.</p>
+<ul>
+<li><strong>Service URL</strong> (e.g., <code>.../MapServer</code>): Adds all layers in the service. Good for maintaining default structure.</li>
+<li><strong>Layer URL</strong> (e.g., <code>.../MapServer/0</code>): Adds a specific sub-layer.<blockquote>
+<p><strong>Pro Tip</strong>: Only use the Layer URL (<code>/0</code>) if you specifically need to change the visual style or the popup configuration. If the default service looks exactly how you want it, stick with the Service URL for the best user experience.</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="phase-3-configuring-symbology-styles">Phase 3: Configuring Symbology (Styles)</h2>
+<p>Once your layer appears, it will show the symbology and settings that were originally configured.</p>
+<ol>
+<li>Select the layer in the <code>Layers</code> pane on the left.</li>
+<li>On the right-hand vertical toolbar, click the <code>Styles</code> icon (circle, square, and triangle).</li>
+<li>Click <code>+ Field</code> to choose which attribute you want to map (e.g., "Air Quality Index" or "Country Name").</li>
+<li>The Portal will suggest a drawing style (e.g., "Counts and Amounts" for numbers or "Types" for categories).</li>
+<li>Click <strong>Style Options</strong> to change colors, transparency, or symbol sizes.
+<img alt="Symbology" src="../../../resources/img/webmaptutorial/image2.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ol>
+<hr />
+<h2 id="phase-4-crafting-informative-pop-ups">Phase 4: Crafting Informative Pop-ups</h2>
+<p>A good web map doesn't just show dots; it provides context when a user clicks on a feature.</p>
+<ol>
+<li>On the right-hand toolbar, click the <code>Pop-ups</code> icon.</li>
+<li><strong>Enable Pop-ups</strong>: Ensure the toggle is on.</li>
+<li><strong>Title</strong>: Use a field name in curly brackets, like <code>{Country_Name}</code>, to make the title dynamic.</li>
+<li><strong>Fields List</strong>: Click <code>Select fields</code> to hide technical jargon (like ObjectIDs) and only show the data that matters to your audience.</li>
+<li><strong>Add Media</strong>: You can even add charts or images that pull directly from the data attributes.
+<img alt="Pop-ups" src="../../../resources/img/webmaptutorial/image3.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></li>
+</ol>
+<hr />
+<h2 id="phase-5-saving-and-sharing">Phase 5: Saving and Sharing</h2>
+<p>Your map isn't done until it's saved and shared with your colleagues.</p>
+<h3 id="save">Save</h3>
+<ol>
+<li>On the far-left toolbar, click the <code>Save and open</code> icon (the folder/disk).</li>
+<li>Give your map a clear <strong>title</strong>, <strong>tags</strong> and a brief <strong>summary</strong>.</li>
+</ol>
+<h3 id="share">Share</h3>
+<p>Click the <code>Share</code> button and modify permissions:
+- <strong>Owner</strong>: Only you can see it.
+- <strong>Organization</strong>: Everyone at the EEA can see it.
+- <strong>Public</strong>: Send a request to Discomap team to share a product publicly.
+<img alt="Share" src="../../../resources/img/webmaptutorial/image4.png" style="height:300px;display: block; margin-left: auto; margin-right: auto; margin-top:20px; margin_bottom:20px" /></p>
+<hr />
+<h2 id="conclusion-best-practices">Conclusion &amp; Best Practices</h2>
+<h3 id="key-tips-for-eea-users">Key Tips for EEA Users</h3>
+<ul>
+<li><strong>Basemaps</strong>: Use the <code>Basemap</code> button on the left to switch between the different basemaps that are available on the Gallery.</li>
+<li><strong>Layer Order</strong>: You can drag and drop layers in the list to change their drawing order. Always keep points on top, lines in the middle, and polygons (areas) at the bottom.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../guidelines/" class="btn btn-neutral float-left" title="Workflows and guidelines"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../desktop/arcgispro/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../guidelines/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../desktop/arcgispro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
